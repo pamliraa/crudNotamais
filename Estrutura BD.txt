@@ -1,0 +1,35 @@
+﻿CREATE TABLE Aluno ( 
+ idAluno INT PRIMARY KEY, 
+ nome VARCHAR(45), 
+ email VARCHAR(45), 
+ senha VARCHAR(45), 
+ instituicao VARCHAR(45) 
+); 
+CREATE TABLE Disciplina ( 
+ idDisciplina INT PRIMARY KEY, 
+ nome VARCHAR(45), 
+ cargaHoraria VARCHAR(45), 
+ Aluno_idAluno INT, 
+ FOREIGN KEY (Aluno_idAluno) REFERENCES Aluno(idAluno) 
+); 
+CREATE TABLE periodo ( 
+ idperiodo INT PRIMARY KEY, 
+ ano INT, 
+ semestre INT 
+); 
+CREATE TABLE Nota ( 
+ idNota INT PRIMARY KEY, 
+ descricao VARCHAR(45), 
+ valor DECIMAL(4,2), 
+ data DATE, 
+ Disciplina_idDisciplina INT, 
+ periodo_idperiodo INT, 
+ FOREIGN KEY (Disciplina_idDisciplina) REFERENCES Disciplina(idDisciplina),  FOREIGN KEY (periodo_idperiodo) REFERENCES periodo(idperiodo) ); 
+CREATE TABLE Meta ( 
+ idMeta INT PRIMARY KEY, 
+ descricao VARCHAR(45), 
+ notaAlvo DECIMAL(4,2), 
+ Aluno_idAluno INT, 
+ Disciplina_idDisciplina INT, 
+ FOREIGN KEY (Aluno_idAluno) REFERENCES Aluno(idAluno), 
+ FOREIGN KEY (Disciplina_idDisciplina) REFERENCES Disciplina(idDisciplina) );
