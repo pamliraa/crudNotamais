@@ -1,4 +1,8 @@
-﻿CREATE TABLE Aluno ( 
+CREATE DATABASE notamais;
+USE notamais;
+
+
+CREATE TABLE Aluno ( 
  idAluno INT PRIMARY KEY, 
  nome VARCHAR(45), 
  email VARCHAR(45), 
