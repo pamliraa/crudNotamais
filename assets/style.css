@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+    font-family: "Josefin Sans", sans-serif;
+  
+}
+
+#big-div{
+    display: flex;
+    height: 100vh;
+}
+
+#div-foto{
+    background-color:#555D61;
+    width: 50vw;
+}
+
+#form{
+    background-color: black;
+    width: 50vw;
+}
+
+.label{
+    color: white;
+}
