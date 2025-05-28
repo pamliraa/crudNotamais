@@ -12,16 +12,16 @@
 <body>
     <div id="big-div">
         <div id="div-foto">
-            <img src="assets/foto_login.png" alt="fotologin">
+            <img src="assets/foto_login.png" alt="fotologin" id="foto">
         </div>
         <div id="form">
-            <h1>Seja Bem-Vindo!</h1>
+            <h1 id="bem-vindo">Seja Bem-Vindo!</h1>
             <form action="logar.php" method = "POST">
                 <label for="email" class="label">Email:</label>
                 <input type="text" name="email" id= "email" class="input">
                 <label for="senha" class="label">Senha:</label>
                 <input type="password" name="senha" id="senha"  class="input">
-                <input type="submit"  id="buttom" value="ENTRAR">
+                <input type="submit"  id="button" value="ENTRAR">
             </form>
         </div>
     </div>
