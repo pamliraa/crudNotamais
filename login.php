@@ -22,7 +22,15 @@
                 <label for="senha" class="label">Senha:</label>
                 <input type="password" name="senha" id="senha"  class="input">
                 <input type="submit"  id="button" value="ENTRAR">
+                <div class="div-erro">
+        <?php
+            if (isset($_GET['erro']) && $_GET['erro'] == 1) {
+                echo '<p>E-mail ou senha incorretos.</p>';
+                }
+        ?>
+            
             </form>
+        
         </div>
     </div>
 </body>
