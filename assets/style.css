@@ -48,11 +48,25 @@
 .input{
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 12px 12px 12px 40px;
     margin: 5px;
     width: 300px;
     border-radius: 15px;
     border:none ;
+}
+
+.icon-input{
+    position: relative;
+    max-width: 300px;
+    margin-bottom: 15px;
+}
+
+.icon-input svg{
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    pointer-events: none;
 }
 
 #button{
@@ -70,6 +84,12 @@
 
 }
 
+#button:hover{
+    cursor: pointer;
+    /* color: #3a4247; */
+    background-color: #3a4247;
+}
+
 .div-erro{
     color: red;
     font-weight: bolder;
@@ -78,3 +98,11 @@
     font-size: 20px;
 }
 
+#cadastro a{
+    color: #A6A6A6;
+    
+}
+
+#cadastro{
+    color:white;
+}
