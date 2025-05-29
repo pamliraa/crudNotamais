@@ -41,6 +41,8 @@
 #bem-vindo{
     color: white;
     margin: 10px;
+    font-size: 45px;
+    padding: 0 0px 50px;
 }
 
 .input{
@@ -63,7 +65,16 @@
     height: 40px;
     font-size: 18px;
     margin-top: 5px;
+    margin-left: 30px;
  
 
+}
+
+.div-erro{
+    color: red;
+    font-weight: bolder;
+    text-align: center ;
+    margin-top: 20px ;
+    font-size: 20px;
 }
 
