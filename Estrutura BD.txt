@@ -1,39 +1,51 @@
 CREATE DATABASE notamais;
 USE notamais;
 
+CREATE TABLE Aluno (
+  idAluno INT PRIMARY KEY AUTO_INCREMENT,
+  nome VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  senha CHAR(32) NOT NULL,  
+  instituicao VARCHAR(100)
+);
 
-CREATE TABLE Aluno ( 
- idAluno INT PRIMARY KEY, 
- nome VARCHAR(45), 
- email VARCHAR(45), 
- senha VARCHAR(45), 
- instituicao VARCHAR(45) 
-); 
-CREATE TABLE Disciplina ( 
- idDisciplina INT PRIMARY KEY, 
- nome VARCHAR(45), 
- cargaHoraria VARCHAR(45), 
- Aluno_idAluno INT, 
- FOREIGN KEY (Aluno_idAluno) REFERENCES Aluno(idAluno) 
-); 
-CREATE TABLE periodo ( 
- idperiodo INT PRIMARY KEY, 
- ano INT, 
- semestre INT 
-); 
-CREATE TABLE Nota ( 
- idNota INT PRIMARY KEY, 
- descricao VARCHAR(45), 
- valor DECIMAL(4,2), 
- data DATE, 
- Disciplina_idDisciplina INT, 
- periodo_idperiodo INT, 
- FOREIGN KEY (Disciplina_idDisciplina) REFERENCES Disciplina(idDisciplina),  FOREIGN KEY (periodo_idperiodo) REFERENCES periodo(idperiodo) ); 
-CREATE TABLE Meta ( 
- idMeta INT PRIMARY KEY, 
- descricao VARCHAR(45), 
- notaAlvo DECIMAL(4,2), 
- Aluno_idAluno INT, 
- Disciplina_idDisciplina INT, 
- FOREIGN KEY (Aluno_idAluno) REFERENCES Aluno(idAluno), 
- FOREIGN KEY (Disciplina_idDisciplina) REFERENCES Disciplina(idDisciplina) );
+CREATE TABLE Disciplina (
+  idDisciplina INT PRIMARY KEY AUTO_INCREMENT,
+  nome VARCHAR(100) NOT NULL,
+  cargaHoraria VARCHAR(45)
+);
+
+CREATE TABLE Matricula (
+  idMatricula INT PRIMARY KEY AUTO_INCREMENT,
+  Aluno_idAluno INT NOT NULL,
+  Disciplina_idDisciplina INT NOT NULL,
+  FOREIGN KEY (Aluno_idAluno) REFERENCES Aluno(idAluno),
+  FOREIGN KEY (Disciplina_idDisciplina) REFERENCES Disciplina(idDisciplina)
+);
+
+CREATE TABLE periodo (
+  idperiodo INT PRIMARY KEY AUTO_INCREMENT,
+  ano INT NOT NULL,
+  semestre INT NOT NULL
+);
+
+CREATE TABLE Nota (
+  idNota INT PRIMARY KEY AUTO_INCREMENT,
+  descricao VARCHAR(100),
+  valor DECIMAL(4,2),
+  data DATE,
+  Disciplina_idDisciplina INT NOT NULL,
+  periodo_idperiodo INT NOT NULL,
+  FOREIGN KEY (Disciplina_idDisciplina) REFERENCES Disciplina(idDisciplina),
+  FOREIGN KEY (periodo_idperiodo) REFERENCES periodo(idperiodo)
+);
+
+CREATE TABLE Meta (
+  idMeta INT PRIMARY KEY AUTO_INCREMENT,
+  descricao VARCHAR(100),
+  notaAlvo DECIMAL(4,2),
+  Aluno_idAluno INT NOT NULL,
+  Disciplina_idDisciplina INT NOT NULL,
+  FOREIGN KEY (Aluno_idAluno) REFERENCES Aluno(idAluno),
+  FOREIGN KEY (Disciplina_idDisciplina) REFERENCES Disciplina(idDisciplina)
+);
