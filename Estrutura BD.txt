@@ -15,13 +15,7 @@ CREATE TABLE Disciplina (
   cargaHoraria VARCHAR(45)
 );
 
-CREATE TABLE Matricula (
-  idMatricula INT PRIMARY KEY AUTO_INCREMENT,
-  Aluno_idAluno INT NOT NULL,
-  Disciplina_idDisciplina INT NOT NULL,
-  FOREIGN KEY (Aluno_idAluno) REFERENCES Aluno(idAluno),
-  FOREIGN KEY (Disciplina_idDisciplina) REFERENCES Disciplina(idDisciplina)
-);
+
 
 CREATE TABLE periodo (
   idperiodo INT PRIMARY KEY AUTO_INCREMENT,
@@ -52,4 +46,4 @@ CREATE TABLE Meta (
 
 
 INSERT INTO Aluno (nome, email, senha, instituicao)
-VALUES ('pamela', 'pamela@example.com', MD5('123'), 'Universidade XYZ');
+VALUES ('pamela', 'pamela@gmail.com', MD5('123'), 'Universidade XYZ');
