@@ -49,3 +49,7 @@ CREATE TABLE Meta (
   FOREIGN KEY (Aluno_idAluno) REFERENCES Aluno(idAluno),
   FOREIGN KEY (Disciplina_idDisciplina) REFERENCES Disciplina(idDisciplina)
 );
+
+
+INSERT INTO Aluno (nome, email, senha, instituicao)
+VALUES ('pamela', 'pamela@example.com', MD5('123'), 'Universidade XYZ');
