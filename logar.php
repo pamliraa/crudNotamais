@@ -13,20 +13,22 @@ if(isset($_POST['email'], $_POST['senha'])) {
         echo "Preencha sua senha";
     } else {
     
-        $sql = "SELECT * FROM login WHERE email = :email";
+        $sql = "SELECT * FROM aluno WHERE email = :email";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([':email' => $email]);
 
         $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if($usuario && $senha == $usuario['senha']) {
+
+        if($usuario && md5($senha) == $usuario['senha']){
             session_start();
-            $_SESSION['id'] = $usuario['id'];
+            $_SESSION['idAluno'] = $usuario['idAluno'];
             header("Location: painel.php");
             exit;
         } else {
             header("Location: login.php?erro=1");
             exit;
+
         }
     }
 }

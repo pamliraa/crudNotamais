@@ -1,19 +1,16 @@
 <?php
 
-
 $localhost = "localhost";
 $user = "root";
-$passw = "aluno";
+$passw = "";
 $banco = "notamais";
+$port = 3307;
 
-global $pdo;
-
-try{
-    $pdo = new PDO("mysql:dbname=".$banco."; host=".$localhost,$user,$passw);
+try {
+    $pdo = new PDO("mysql:host=$localhost;port=$port;dbname=$banco;charset=utf8", $user, $passw);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-}catch(PDOException $e){
-    echo "ERRO: ".$e->getMessage();
+} catch(PDOException $e) {
+    echo "ERRO: " . $e->getMessage();
     exit;
 }
 ?>
