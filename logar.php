@@ -17,10 +17,9 @@ if(isset($_POST['email'], $_POST['senha'])) {
         $stmt = $pdo->prepare($sql);
         $stmt->execute([':email' => $email]);
 
-        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+        $usuario = $stmt->fetch(PDO::FETCH_ASSOC); 
 
-
-        if($usuario && md5($senha) == $usuario['senha']){
+        if($usuario && password_verify($senha, $usuario['senha'])){
             session_start();
             $_SESSION['idAluno'] = $usuario['idAluno'];
             header("Location: painel.php");
