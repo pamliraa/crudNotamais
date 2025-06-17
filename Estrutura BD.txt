@@ -5,17 +5,13 @@ CREATE TABLE Aluno (
   idAluno INT PRIMARY KEY AUTO_INCREMENT,
   nome VARCHAR(100) NOT NULL,
   email VARCHAR(100) NOT NULL,
-  senha CHAR(32) NOT NULL,  
-  instituicao VARCHAR(100)
+  senha CHAR(32) NOT NULL
 );
 
 CREATE TABLE Disciplina (
   idDisciplina INT PRIMARY KEY AUTO_INCREMENT,
-  nome VARCHAR(100) NOT NULL,
-  cargaHoraria VARCHAR(45)
+  nome VARCHAR(100) NOT NULL
 );
-
-
 
 CREATE TABLE periodo (
   idperiodo INT PRIMARY KEY AUTO_INCREMENT,
@@ -45,5 +41,3 @@ CREATE TABLE Meta (
 );
 
 
-INSERT INTO Aluno (nome, email, senha, instituicao)
-VALUES ('pamela', 'pamela@gmail.com', MD5('123'), 'Universidade XYZ');
