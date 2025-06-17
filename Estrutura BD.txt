@@ -40,4 +40,5 @@ CREATE TABLE Meta (
   FOREIGN KEY (Disciplina_idDisciplina) REFERENCES Disciplina(idDisciplina)
 );
 
-
+ALTER TABLE Aluno
+MODIFY COLUMN senha VARCHAR(255) NOT NULL;
