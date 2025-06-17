@@ -15,8 +15,8 @@ try {
             echo "<td>" . htmlspecialchars($linha['nome']) . "</td>";
             echo "<td>" . htmlspecialchars($linha['professor']) . "</td>";
             echo "<td>
-                    <a href='editarDisciplina.php?id=" . $linha['idDisciplina'] . "'>Alterar</a> |
-                    <a href='excluirDisciplina.php?id=" . $linha['idDisciplina'] . "' onclick=\"return confirm('Tem certeza que deseja excluir esta disciplina?');\">Excluir</a>
+                    <a href='editarDisciplinas.php?act=upd&idDisciplina=" . $linha['idDisciplina'] . "'>Alterar</a> |
+                    <a href='excluirDisciplinas.php?idDisciplina=" . $linha['idDisciplina'] . "' onclick=\"return confirm('Tem certeza que deseja excluir esta disciplina?');\">Excluir</a>
                   </td>";
             echo "</tr>";
         }

@@ -45,36 +45,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1><?= $idDisciplina ? 'Editar Disciplina' : 'Cadastre uma Disciplina:' ?></h1>
+    <h1>Editar Disciplina</h1>
     
-    <form action="disciplinas.php" method="POST">
+    <form  method="POST">
         <input type="hidden" name="idDisciplina" value="<?= htmlspecialchars($idDisciplina) ?>">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" value="<?= htmlspecialchars($nome) ?>">
         <label for="professor">Professor:</label>
         <input type="text" id="professor" name="professor" value="<?= htmlspecialchars($professor) ?>">
-        <input type="submit" id="buttom" value="<?= $idDisciplina ? 'ATUALIZAR' : 'CADASTRAR' ?>">
+        <input type="submit" id="buttom" value=" ATUALIZAR">
     </form>
-
-    <h2>Disciplinas Cadastradas</h2>
-    <table border="1" cellpadding="10">
-        <tr><th>Nome</th><th>Professor</th><th>Ações</th></tr>
-        <?php
-        $stmt = $pdo->query("SELECT idDisciplina, nome, professor FROM disciplina ORDER BY nome ASC");
-        while ($linha = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo "<tr>";
-            echo "<td>" . htmlspecialchars($linha['nome']) . "</td>";
-            echo "<td>" . htmlspecialchars($linha['professor']) . "</td>";
-            echo "<td>
-                    echo "<td>
-                    <a href='disciplinas.php?act=upd&idDisciplina=" . $linha['idDisciplina'] . "'>[Alterar]</a>
-                        &nbsp;&nbsp;
-                    <a href='excluirDisciplina.php?idDisciplina=" . $linha['idDisciplina'] . "' onclick=\"return confirm('Deseja realmente excluir?')\">[Excluir]</a>
-                    </td>";
-            echo "</tr>";
-        }
-        ?>
-    </table>
+    <a href="listagemDisciplinas.php">Listagem</a>
 </body>
 </html>
 
