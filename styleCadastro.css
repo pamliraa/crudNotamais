@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+ background: radial-gradient(circle, #3a4247, #555d61);
+    font-family: 'Josefin Sans', sans-serif;
+    color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #1e1e1e;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.8);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.logo img {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+}
+
+.input-group input:focus {
+    outline: none;
+    border: 1px solid rgb(133, 133, 133);
+}
+
+#buttom{
+    background-color:#A6A6A6;
+    color: white;
+    text-align: center;
+    border-radius: 20px;
+    border: none;
+    width: 200px;
+    height: 40px;
+    font-size: 18px;
+    margin-top: 5px;
+    margin-left: 30px;
+}
+
+#buttom:hover{
+    cursor: pointer;
+    background-color: #3a4247;
+}
