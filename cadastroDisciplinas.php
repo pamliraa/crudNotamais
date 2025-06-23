@@ -15,12 +15,12 @@
         <form action="cadastrarDisciplinas.php" method="POST">
             <div class="input-group">
                 <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
+                <input type="text" id="nome" name="nome" placeholder="Ex:Matemática">
             </div>
 
             <div class="input-group">
                 <label for="professor">Professor:</label>
-                <input type="text" id="professor" name="professor" required>
+                <input type="text" id="professor" name="professor" placeholder="Ex:Glauber" >
             </div>
 
             <input type="submit" id="buttom" value="CADASTRAR">
