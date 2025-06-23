@@ -10,7 +10,8 @@ CREATE TABLE Aluno (
 
 CREATE TABLE Disciplina (
   idDisciplina INT PRIMARY KEY AUTO_INCREMENT,
-  nome VARCHAR(100) NOT NULL
+  nome VARCHAR(100) NOT NULL,
+  professor VARCHAR(20)
 );
 
 CREATE TABLE periodo (
