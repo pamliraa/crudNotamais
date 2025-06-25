@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="assets/style.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
 </head>
-<body class="classeBody">
+<body id="tabela_disciplinas">
     <div class="botao_para_direita">
         <a href="cadastroDisciplinas.php" class="botao-link">Adicionar nova Disciplina</a>
     </div>
